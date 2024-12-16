@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XAI Summarizer v2</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="header">
+        <span class="title">Grok Chat</span>
+        <button class="refresh-btn" id="refreshBtn" title="Summarize Again">
+            Go!
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 12.9C1.99767 12.341 2.03267 11.784 2.1 11.229H0V9.229H2.002C2.207 7.981 2.629 6.796 3.248 5.822C3.535 5.342 3.873 4.908 4.265 4.585L4.267 4.583C4.268 4.582 4.269 4.582 4.27 4.582C7.142 2.343 8.8 2 10.001 2C16.271 2 21.301 7.055 21.307 13.301C21.307 15.101 22.044 16.701 23.233 17.895C24.213 18.913 25.366 19.601 26.589 19.978V24H24.589C25.205 24 25.819 23.457 25.819 22.77C25.819 22.083 25.202 21.54 24.589 21.54H4C2.852 21.54 1.923 20.61 1.923 19.463C1.923 18.316 2.852 17.387 4 17.387H6.316C6.038 16.042 5.973 14.664 6.147 13.352L6.337 11.876H4.114L4.116 9.876H12C13.135 9.876 14.064 10.75 14.099 11.873L14.1 11.976C14.1 11.976 14.103 11.978 14.104 11.979L14.108 11.984C14.147 12.881 14.065 13.777 13.873 14.642H8L7.999 16.644C7.49 16.643 6.981 16.672 6.468 16.76C2.887 6.894 -0.236 9.667 0 13.01C0 19.292 4.708 24 10.999 24C17.298 24 22.299 18.999 22.299 11.998C22.299 10.668 22.17 9.359 21.933 8.124L21.934 8.125C21.705 11.858 22 11.438 22 11H26V13H21.998C21.815 13.555 21.794 14.112 22.001 14.671C22.429 15.678 23.047 16.578 23.986 17.388L23.983 17.391L23.984 17.392C23.985 17.393 23.987 17.393 23.988 17.394C21.559 21.648 18.781 24 15.001 24C10.744 24 5.803 19.499 5.802 12.998L2 12.9Z" fill="currentColor"/>
+            </svg>
+        </button>
+    </div>
+    <div class="content">
+        <div class="spinner hidden" id="spinner"></div>
+        <div class="message" id="message">
+            Click the refresh icon above to summarize the current page.
+        </div>
+        <div class="summary hidden" id="summary"></div>
+        <div class="error hidden" id="error"></div>
+        
+        <!-- Chat Interface -->
+        <div class="chat-container hidden" id="chatContainer">
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input-container">
+                <textarea 
+                    id="chatInput" 
+                    placeholder="Ask about this page..."
+                    rows="1"
+                    ></textarea>
+                <button id="sendMessage" class="send-button" title="Send message">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
